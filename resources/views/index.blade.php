@@ -17,10 +17,10 @@
                         <a class="nav-link active" aria-current="page" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#training">Training</a>
+                        <a class="nav-link" href="{{ route(name: 'login') }}">login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/career">Career</a>
+                        <a class="nav-link" href="{{ route('career') }}">Career</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>

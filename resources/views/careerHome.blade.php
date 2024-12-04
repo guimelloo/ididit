@@ -41,7 +41,7 @@
                 <a class="nav-link" href="#">Perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sair</a>
+                <a class="nav-link" href="{{ route('logout') }}">Sair</a>
               </li>
             </ul>
           </div>
