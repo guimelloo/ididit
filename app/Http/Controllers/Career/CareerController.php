@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Career;
 use App\Admin\Users\UsersResource;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class CareerController extends Controller
@@ -17,6 +18,17 @@ class CareerController extends Controller
         return view('career');
     }
 
+    public function careerHome()
+    {
+        $user = Auth::user();
+
+        if ($user) {
+            return view('careerHome');
+        } else {
+            return redirect()->route('career');
+        }
+    }
+
     public function create(Request $request)
     {
         $validated = $request->validate([
@@ -27,7 +39,7 @@ class CareerController extends Controller
         ]);
         
         if ($this->repository->create($validated)) {
-            return view('/');
+            return view('/CareerHome');
         }
     }
 
