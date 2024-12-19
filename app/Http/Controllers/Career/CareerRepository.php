@@ -30,8 +30,7 @@ class CareerRepository
         $user = $this->eloquent->newQuery()->create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'art' => $data['art']
+            'password' => Hash::make($data['password']),    
         ]);
 
         return $user;
@@ -42,6 +41,7 @@ class CareerRepository
         $data = array_filter([
             'name' => $data['name'],
             'email' => $data['email'],
+            'career' => $data['career']
         ]);
 
         $this->eloquent->newQuery()
@@ -54,7 +54,6 @@ class CareerRepository
         $response = $this->eloquent->newQuery()->find($id);
         $response->delete();
     }
-
 
     private function casts(): array
     {

@@ -3,30 +3,48 @@
 namespace App\Http\Controllers\Career;
 
 use App\Admin\Users\UsersResource;
+use App\Http\Controllers\Art\ArtRepository;
 use App\Http\Controllers\Controller;
+use App\Models\Art;
+use App\Models\UserArts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class CareerController extends Controller
 {
-    public function __construct(private CareerRepository $repository)
+    public function __construct(private CareerRepository $repository, private ArtRepository $artRepository)
     {}
 
     public function index()
     {
-        return view('career');
+        return view('index');
     }
 
-    public function careerHome()
+    public function form()
     {
-        $user = Auth::user();
+        return view('form');
+    }
 
-        if ($user) {
-            return view('careerHome');
-        } else {
-            return redirect()->route('career');
-        }
+    public function home()
+    {
+        $userArts = $this->artRepository->userArts();
+
+        $artMartialsName = Auth::user()->arts->pluck('name');
+           
+        return view('career.home', ['userArts' => $userArts, 'artMartialsName' => $artMartialsName]);
+    }
+
+    public function account()
+    {
+        return view('career.account');
+    }
+
+    public function arts()
+    {
+        $artMartials = Art::query()->get()->pluck('name', 'id');
+
+        return view('career.arts', compact('artMartials'));
     }
 
     public function create(Request $request)
@@ -35,20 +53,17 @@ class CareerController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'password' => 'required|string|min:6',
-            'art' => 'required|string',
         ]);
         
         if ($this->repository->create($validated)) {
-            return view('/CareerHome');
+            return redirect()->route('career.home');
         }
-    }
-
-    public function update(int $id, Request $request)
-    {
         
+        return redirect()->route('career.form');
     }
 
-    public function delete(int $group)
+    public function startCareer()
     {
+        return view('career.start-career');
     }
 }

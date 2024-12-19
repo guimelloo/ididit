@@ -1,12 +1,10 @@
-
-
 @extends('layouts.app')
 
 @section('title', 'Página Inicial')
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container">
-            <a class="navbar-brand" href="#">Career in Combat Sports</a>
+            <a class="navbar-brand" href="{{ route(name: 'index') }}">Career in Combat Sports</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,7 +18,7 @@
                         <a class="nav-link" href="{{ route(name: 'login') }}">login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('career') }}">Career</a>
+                        <a class="nav-link" href="{{ route('form') }}">Career</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -84,7 +82,7 @@
     <div class="container py-5 mb-4" id="contact" style="background-color: #343a40;">
         <h2 class="text-center mb-4">Contact Us</h2>
         <p class="text-center">Have questions? Get in touch with us!</p>
-        <form action="{{ route('email.store') }}" method="POST">
+        <form action="{{ route('career.home') }}" method="POST">
         @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
