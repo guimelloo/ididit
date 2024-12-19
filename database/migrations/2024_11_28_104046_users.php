@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('art')->default('boxing');
+            $table->boolean('career')->default(false);
+            $table->boolean('admin')->default(false);
             $table->timestamps();
         });
 

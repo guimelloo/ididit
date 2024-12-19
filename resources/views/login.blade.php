@@ -1,14 +1,7 @@
     @extends('layouts.app')
-
-    @if (Auth::check())
-    <p>Bem-vindo, {{ Auth::user()->name }}!</p>
-@else
-    <p>Você não está logado.</p>
-@endif
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container">
-            <a class="navbar-brand" href="/">Career in Combat Sports</a>
+            <a class="navbar-brand" href="{{ route(name: 'index') }}">Career in Combat Sports</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -19,10 +12,10 @@
                         <a class="nav-link active" aria-current="page" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#training">Training</a>
+                        <a class="nav-link" href="{{ route(name: 'login') }}">login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/career">Career</a>
+                        <a class="nav-link" href="{{ route('form') }}">Career</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
