@@ -4,21 +4,7 @@
     <nav class="bg-black text-light vh-100 p-3" style="width: 250px;">
         <h4 class="text-danger">Martial Arts</h4>
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Alunos</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Instrutores</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Treinamentos</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-light">Configurações</a>
-            </li>
+
         </ul>
     </nav>
 
@@ -60,8 +46,8 @@
                 <div class="col-md-8">
                     <div class="card bg-secondary text-light">
                         <div class="card-body">
-                            <h5 class="card-title">Detalhes Adicionais</h5>
-                            <p class="card-text">Aqui você pode adicionar mais informações relevantes sobre o perfil do usuário, como histórico de atividades, certificações, etc.</p>
+                            <h5 class="card-title">Soon !!!</h5>
+                            <p class="card-text">Soon new features...</p>
                         </div>
                     </div>
                 </div>
@@ -80,24 +66,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Treinamento de Karatê</td>
-                            <td>01/12/2024</td>
-                            <td><span class="badge bg-success">Concluído</span></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Aula de Jiu-Jitsu</td>
-                            <td>02/12/2024</td>
-                            <td><span class="badge bg-warning">Pendente</span></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Treino Funcional</td>
-                            <td>03/12/2024</td>
-                            <td><span class="badge bg-danger">Cancelado</span></td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

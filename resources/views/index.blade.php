@@ -20,9 +20,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('form') }}">Career</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -76,27 +73,5 @@
                 <p>Plan and manage thrilling live events, bringing the best fights to the world.</p>
             </div>
         </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="container py-5 mb-4" id="contact" style="background-color: #343a40;">
-        <h2 class="text-center mb-4">Contact Us</h2>
-        <p class="text-center">Have questions? Get in touch with us!</p>
-        <form action="{{ route('career.home') }}" method="POST">
-        @csrf
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" name="message" placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-danger w-100">Send Message</button>
-        </form>
     </div>
 @section('content')

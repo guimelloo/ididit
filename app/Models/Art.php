@@ -15,8 +15,8 @@ class Art extends Model
         return $this->belongsToMany(User::class, 'users_arts', 'art_id', 'user_id');
     }
 
-    public function arts_videos()
+    public function videos()
     {
-        return $this->hasMany(ArtVideo::class, 'art_id');
+        return $this->hasMany(Video::class, 'art_id');
     }
 } 

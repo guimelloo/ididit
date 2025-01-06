@@ -35,25 +35,12 @@
 
             <!-- Artes Marciais (Checkboxes) -->
             <div class="mb-3">
-                <label for="martial_arts" class="form-label">Selecione as Artes Marciais que deseja praticar:</label><br>
+                <label for="martial_arts" class="form-label">Select the arts:</label><br>
                 @php $i = 0 @endphp
                 @foreach ($artMartials as $key => $art)
                     <input type="checkbox" name="martial_arts[{{ $i }}]" value="{{ $key }}"> {{ $art }} <br>
                     @php $i++ @endphp
                 @endforeach
-                <!-- <input type="checkbox" name="martial_arts[0]" value="Jiu-Jitsu"> Jiu-Jitsu <br>
-                <input type="checkbox" name="martial_arts[1]" value="Muay Thai"> Muay Thai <br>
-                <input type="checkbox" name="martial_arts[2]" value="Boxe"> Boxe <br>
-                <input type="checkbox" name="martial_arts[3]" value="Karate"> Karate <br>
-                <input type="checkbox" name="martial_arts[4]" value="Taekwondo"> Taekwondo <br>
-                <input type="checkbox" name="martial_arts[5]" value="Judo"> Judô <br>
-                <input type="checkbox" name="martial_arts[6]" value="Kung Fu"> Kung Fu <br> -->
-            </div>
-
-            <!-- Objetivo -->
-            <div class="mb-3">
-                <label for="goal" class="form-label">Qual é o seu objetivo ao praticar artes marciais?</label>
-                <textarea class="form-control" id="goal" name="goal" rows="3" required></textarea>
             </div>
 
             <!-- Botão de Envio -->
