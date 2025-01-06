@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ArtVideo extends Model
+class Video extends Model
 {
-    protected $table = 'arts_videos';
+    protected $table = 'videos';
 
     public $timestamps = false;
 

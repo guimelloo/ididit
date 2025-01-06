@@ -9,12 +9,12 @@
       <ul class="nav flex-column">
         @if (count($userArts) > 0)
           <li class="nav-item">
-            <a href="#" class="nav-link text-light">Arts</a>
+            <a href="{{ route('career.arts') }}" class="nav-link text-light">Arts</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('career.videos') }}" class="nav-link text-light">Trainings</a>
           </li>
         @endif
-        <li class="nav-item">
-          <a href="#" class="nav-link text-light">Trainings</a>
-        </li>
       </ul>
     </nav>
 

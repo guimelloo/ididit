@@ -5,6 +5,7 @@ use App\Http\Controllers\Art\ArtController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Career\CareerController;
 use App\Http\Controllers\Contact\ContactController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
     Route::get('/', [CareerController::class, 'index'])->name('index');
@@ -16,9 +17,13 @@ use Illuminate\Support\Facades\Route;
         Route::get('/career/account', [CareerController::class, 'account'])->name('career.account'); 
         Route::get('/career/arts', [CareerController::class, 'arts'])->name('career.arts'); 
         Route::get('/career/admin/videos', [ArtVideosController::class, 'index'])->name('career.admin.videos'); 
+        Route::get('/career/videos', [CareerController::class, 'videos'])->name('career.videos'); 
         Route::post('/career/admin/videos', [ArtVideosController::class, 'form'])->name('career.admin.videos'); 
         Route::post('/career/arts', [ArtController::class, 'form'])->name('career.form'); 
-        Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+        Route::get('/logout', function () {
+            Auth::logout();
+            return redirect('/');
+        })->name('logout');
     });
     
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

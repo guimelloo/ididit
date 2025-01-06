@@ -47,6 +47,13 @@ class CareerController extends Controller
         return view('career.arts', compact('artMartials'));
     }
 
+    public function videos()
+    {
+        $artMartials = Auth::user()->arts()->withCount('videos')->get();
+
+        return view('career.videos', compact('artMartials'));
+    }
+
     public function create(Request $request)
     {
         $validated = $request->validate([
